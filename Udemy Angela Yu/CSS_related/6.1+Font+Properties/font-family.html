@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Font Family</title>
+
+    <!-- We just included the source of the new font we found in google fonts; 
+         So now we can use the font in our CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* Here "Bitcount Grid Double" is the main font we would like to use; 
+      in case it doesn't work, system-ui will function as backup font */
+      #special_font {
+        font-family: "Bitcount Grid Double", system-ui;
+      }
+
+      #helvetica {
+        font-family: Helvetica, sans-serif;
+      }
+
+      #arial {
+        font-family: Arial, sans-serif;
+      }
+
+      #serif {
+        font-family: serif;
+      }
+
+      #sans-serif {
+        font-family: sans-serif;
+      }
+
+      #cursive {
+        font-family: cursive;
+      }
+
+      #monospace {
+        font-family: monospace;
+      }
+
+      #fantasy {
+        font-family: fantasy;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1 id="special_font">Special Font</h1>
+    <p id="helvetica">Helvetica</p>
+    <p id="arial">Arial</p>
+    <p id="serif">Serif</p>
+    <p id="sans-serif">Sans Serif</p>
+    <p id="cursive">Cursive</p>
+    <p id="monospace">Monospace</p>
+    <p id="fantasy">Fantasy</p>
+  </body>
+</html>
