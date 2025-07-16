@@ -1,6 +1,6 @@
 /* Write your code here: */
 
-/* comma means apply this styling to both descendants: h1,h2 */
+/* comma means apply this styling to both descendants: h1,h2 ; GROUP*/
 body h1,h2 {
     color:purple;
 }
