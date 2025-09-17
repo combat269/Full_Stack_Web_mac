@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" id="root">
+  <head>
+    <!--Ensures proper character encoding (to display all languages and symbols correctly).-->
+    <meta charset="UTF-8" /> 
+    <!--Title that appears in the browser tab.-->
+    <title>CSS Properties</title>
+    <!-- Including the source of the new font with weight 400: -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* This CSS belongs to body of the HTML; It changes the background of the whole HTML;
+       makes all HTML code in body of white color; 
+       changes font-size to 18pt -> 18 points;      
+       */
+      body {
+        background-color: cornflowerblue;
+        color: white;
+        font-size: 18pt; /* This overrides html font-size */
+      }
+
+      /* Don't change the CSS above, add Your CSS below */
+      /*root is our "html" tag's ID*/
+      /*2rem will now mean 60px (2 × 30px), not 36px (2 × 18pt), because rem units are based on html font size.*/
+      #root {
+        font-size: 20px;
+      }
+      #change_color {
+        color: coral;
+      }
+      #change_font {
+        font-size: 2rem; /* 2 × root font size (30px) = 60px */
+        /*rem ignores the body font size — that's why this part worked based on #root.*/
+      }
+      #change_weight {
+        font-weight: 900; /* Very bold text */
+      }
+      #change_font_family {
+        font-family: "Caveat", cursive; /* Applies Google "Caveat" font */
+      }
+      #change_text_align {
+        text-align: right; /* Aligns the text to the right side */
+      }
+    </style>
+  </head>
+
+  <body>
+    <!--ID's are unique! Remember that! But classes are not unique!-->
+    <h1>Important CSS Properties</h1>
+    <p id="change_color">Color</p>
+    <p id="change_font">Font Size</p>
+    <p id="change_weight">Font Weight</p>
+    <p id="change_font_family">Font Family</p>
+    <p id="change_text_align">Text Align</p>
+
+    <!-- TODOs
+  1. Change the color of <p>Color</p> to "coral" color.
+  2. Change the font size of <p>Font Size</p> to 2X the size of the root font size.
+  3. Change the font weight of <p>Font Weight</p> to 900.
+  4. Change the font family of <p>Font Family</p> to the Google font Caveat with regular (400) font weight.
+  Link: https://fonts.google.com/specimen/Caveat
+  5. Change the <p>Text Align</p> to right align.
+  6. Change the the root (html element) font size to 30px -->
+  </body>
+</html>

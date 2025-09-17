@@ -1,0 +1,29 @@
+#outer-box {
+  background-color: purple;
+}
+
+/* Padding is applied all the tags under div with class box */
+/* Targets all elements with the class .box.
+
+Sets blue background and 10px padding on all sides. */
+.box {
+  background-color: blue;
+  padding: 10px;
+}
+/* 
+Applies to all <p> tags.
+
+Makes text yellow, and removes spacing (default margins and paddings). */
+p {
+  color: yellow;
+  margin: 0;
+  padding: 0;
+}
+
+.white-text {
+  color: white;
+}
+/* innder-box should be lower that box so that the latest changes should be of inner-box */
+.inner-box {
+  background-color: red;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>A dding CSS</title>
+    <!-- Internal CSS used usually when necessary for the current page; Selector is html-->
+    <style>
+      /* Selector is html; css applied to the whole file */
+      html {
+        background: lightblue;
+      }
+      /* Selector is h2; applied to all tags of h2 */
+      h2 {
+        color: brown;
+      }
+
+      h1{
+        color: black;
+      }
+      /* Class selector; class specific CSS application: class = "green-text" */
+      .green-text {
+        color: green;
+      }
+      /* ID specific CSS application: id = "main"*/
+      #main {
+        color: purple;
+      }
+      /* Attribute specific CSS application: paragraph tag with draggable = "true" attribute*/
+      p[draggable = "true"] {
+        color: pink;
+      }
+      /* Select all: applies to all tags, attributes no matter what  */
+      *{
+        color:red
+      }
+    </style>
+  </head>
+
+  <body>
+    <!--Inline Style used rarely & it is for line by line-->
+    <h1 style="background: red">Three Methods of Adding CSS</h1>
+    <!-- Create 3 Links to The 3 Webpages: inline, internal and external -->
+
+    <a href="./inline.html">Inline</a>
+    <a href="./internal.html">Internal</a>
+    <a href="./external.html">External</a>
+
+    <h2>Heading 2</h2>
+    <h3>Heading 3</h3>
+
+    <!--Using CSS for classes (groups that we want to apply the same design with css)-->
+    <!--We can group several tags under same class-->
+    <h3 class="green-text">Heading 3</h3>
+    <p class="green-text">Testing paragraph</p>
+
+    <!--Use id attribute only to use design for specific tag; and this id must belong to unique tag-->
+    <p id="main" >Hey i'm here</p>
+
+    <!--The tags with attribute draggable = "true" will be of color pink-->
+    <p draggable="true">testing ->draggable</p>
+    <p draggable="true">testing1 ->draggable</p>
+    <p draggable="false">testing2  ->not draggable</p>
+  </body>
+</html>

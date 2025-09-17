@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CSS Cascade</title>
+    <!--Linking external css file-->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <!--ID here overwrites the class css styling-->
+    <!-- ID selectors have higher specificity than class selectors — so if both apply, ID wins. -->
+    <div id="outer-box" class="box">
+      <div class="box">
+        <p>Yellow Text</p>
+        <div class="box inner-box">
+          <p class="white-text">White Text</p>
+        </div>
+      </div>
+
+      <div class="box">
+        <p>Yellow Text</p>
+        <!--Here we have two classes assigned to one div-->
+        <div class="box inner-box">
+          <p class="white-text">White Text</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

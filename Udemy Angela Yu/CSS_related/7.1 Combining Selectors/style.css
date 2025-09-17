@@ -1,0 +1,36 @@
+/* Write your code here: */
+
+
+/* - This means:
+  - `h1` **inside `body`** gets **purple**
+  - AND any `h2` (even outside of `body`, if it existed) also gets purple.
+  
+> ⚠️ **To apply both to `body h1` AND `body h2`**, write:
+```css
+body h1, body h2 {
+  color: purple;
+} */
+body h1,h2 {
+    color:purple;
+}
+/* parent is .box and child is .done; parent-child relationship */
+/* - This targets **any `.done` element that is a direct child of `.box`** */
+.box > .done{
+    color:firebrick
+}
+/* ancestor is ul and descendant is li; css is applied on descendant */
+/* - Applies to **all `li` elements that are inside `ul`** (even if deeply nested)
+- All list items (`Wash Clothes`, `Read`, `Maths Questions`) turn **blue** — unless overridden. */
+ul li{
+    color: blue;
+}
+/* chaining method; li & done belong to one line of tag */
+li.done{
+    color: seagreen;
+}
+
+/* using combination of above CSS selectors */
+/* - Targets: **any `<p class="done">` that is inside a `<ul>`** */
+ul p.done{
+    font-size: 2rem;
+}

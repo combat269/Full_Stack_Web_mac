@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homepage</title>
+  </head>
+  <body>
+    <h1>Homepage</h1>
+    <!-- anchor tag that is used to link; target by 
+        default makes the link to open in the tab 
+        that we are currently; the _blank target 
+        opens in a new tab; noopener prevents 
+        accessing original page using JavaScript; 
+        noreferrer provides both privacy and security-->
+
+    <!--Always pair target = "_blank" with rel = "noopener noreferrer"-->
+    <a
+      href="https://www.theodinproject.com/about"
+      target="_blank"
+      rel="noopener noreferrer"
+      >About The Odin Project</a
+    >
+    <br />
+    <br />
+    <br />
+    <a href="./pages/about.html" rel="noreferrer">About us</a>
+
+    <h2>Just an image</h2>
+    <!--Good practice to always specify width and height of the image-->
+    <img src="https://www.theodinproject.com/mstile-310x310.png" height = "200" width="200" />
+     <br/>
+     <!--The alt attribute is also displayed when the image cannot be loaded-->
+    <img src="./images/odin.png" alt = "The Odin Project Logo" height = "200" width="200" />
+  </body>
+</html>
