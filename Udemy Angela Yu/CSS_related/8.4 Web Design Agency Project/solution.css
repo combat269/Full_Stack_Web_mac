@@ -1,68 +1,83 @@
+/* Apply to entire page */
 body {
-  font-family: "Poppins", sans-serif;
-  margin: 50px 50px 0 50px;
-  background-color: #faf9f6;
-  display: flex;
-  flex-direction: column;
-  min-height: 95vh;
+  font-family: "Poppins", sans-serif;/* Use Poppins font */
+  margin: 50px 50px 0 50px; /* Top, right, left margins; no bottom margin */
+  background-color: lightcyan; /* Light background color */
+  display: flex; /* Make body a flex container */
+  flex-direction: column; /* Arrange children vertically */
+  min-height: 95vh; /* Minimum height = 95% of viewport */
 }
+
+/* Main content grows to fill available space */
 .main {
   flex: 1;
 }
 
+/* Main heading style */
 h1 {
   font-size: 5rem;
 }
 
+/* Footer aligned to bottom-right */
 footer {
   text-align: right;
   color: midnightblue;
 }
 
+/* Style for images inside cards */
 .tile-image {
-  width:200px;
-  height: 200px;
-  float: left;
-  margin-right: 50px;
+  width: 200px;              /* Fixed width */
+  height: 200px;             /* Fixed height */
+  float: left;               /* Float left to wrap text */
+  margin-right: 50px;        /* Space between image and text */
 }
 
+/* Common card style */
 .card {
-  width: 45%;
+  width: 45%;                /* Each card takes 45% of container */
 }
 
+/* Position left card on the left side */
 .left {
   float: left;
 }
 
+/* Position right card on the right side */
 .right {
   float: right;
 }
 
+/* Color the word 'Creative' */
 .creative {
   color: midnightblue;
 }
 
+/* ========== Responsive Styles for Small Screens ========== */
 @media (max-width: 680px) {
+  /* Shrink logo on mobile */
   .logo {
     width: 100px;
   }
 
+  /* Make heading smaller and center it */
   h1 {
     font-size: 3.5rem;
     text-align: center;
   }
 
+  /* Stack cards vertically */
   .card {
-    width: 100%;
+    width: 100%;             /* Full width on small screens */
     display: block;
     margin-bottom: 30px;
     text-align: justify;
   }
 
+  /* Image in card adjusts to full width */
   .card img {
     margin-bottom: 10px;
     width: 100%;
     display: inline;
-    object-fit: cover;
+    object-fit: cover;       /* Ensures image covers box without distortion */
   }
 }

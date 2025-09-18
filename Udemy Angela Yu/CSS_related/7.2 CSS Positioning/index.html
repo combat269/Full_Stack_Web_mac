@@ -3,33 +3,49 @@
   <head>
     <title>CSS Positioning Exercise</title>
     <style>
-      /* Write your code here */
-      /* Internal CSS styling; */
+      /* Everything inside <style> is CSS that applies to this page */
 
-      /* Positioned relative to its static position */
+      /* ===== BLUE BOX =====
+         - A 500×300 rectangle painted blue.
+         - `position: relative` keeps it in normal document flow,
+           but allows `top/left` offsets AND becomes the positioning
+           context for absolutely positioned descendants. */
       .blue-box {
-        background-color: blue;
-        height: 300px;
-        width: 500px;
-        position: relative;
-        left: 200px;
-        top: 200px;
+        background-color: blue; /* fill the box blue */
+        height: 300px; /* vertical size */
+        width: 500px; /* horizontal size */
+
+        position: absolute; /* creates a "positioned" ancestor */
+        left: 200px; /* shift VISUAL position 200px right from where it would be */
+        top: 200px; /* shift 200px down; space is still reserved at original spot */
+        /* note: with relative, the element still occupies its original flow space */
       }
-      /* Positioned relative to its nearest parent which is blue-box div */
+
+      /* ===== RED CIRCLE =====
+         - A 200×200 circle.
+         - `position: absolute` removes it from normal flow.
+         - It is positioned relative to the NEAREST ancestor that is
+           not `position: static` → the `.blue-box` (because it’s `relative`).
+         - `top` and `left` measure from the blue-box’s padding edge. */
       .red-circle {
-        background-color: red;
-        border-radius: 50%;
-        height: 200px;
-        width: 200px;
-        position: absolute;
-        top: 150px;
-        left: 250px;
+        background-color: red; /* fill the circle red */
+        border-radius: 50%; /* 50% of width/height → perfect circle */
+        height: 200px; /* vertical size */
+        width: 200px; /* horizontal size */
+
+        position: absolute; /* take out of flow; use offsets */
+        top: 150px; /* 150px down from the top of the blue box */
+        left: 250px; /* 250px from the left of the blue box */
+        /* note: 150(top) + 200(height) = 350px > blue box height (300px),
+                 so ~50px of the circle will overflow below the blue box (visible by default) */
       }
     </style>
   </head>
 
   <body>
+    <!-- The blue rectangle is the containing block for the red circle -->
     <div class="blue-box">
+      <!-- Absolutely positioned child inside the blue box -->
       <div class="red-circle"></div>
     </div>
   </body>

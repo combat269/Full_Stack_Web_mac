@@ -1,65 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CSS Float</title>
+    <style>
+      /*Float layout was popular before Flexbox and Grid but not now*/
 
-<head>
-  <meta charset="UTF-8">
-  <title>CSS Float</title>
-  <style>
-    div {
-      display: inline-block;
-      width: 40%;
-    }
+      div {
+        display: inline-block;
+        width: 40%;
+      }
+      /* 2em = 2× the font size of its container. */
+      p {
+        font-size: 2em;
+      }
+      /*Floats the .cat div to the left side of the page.
 
-    p {
-      font-size: 2em;
-    }
+      Other content flows around it if not also floated or cleared.*/
+      .cat {
+        float: left;
+        background-color: aquamarine;
+      }
 
-    .cat {
-      float: left;
-      background-color: aquamarine;
-    }
+      .dog {
+        float: right;
+        background-color: coral;
+      }
 
-    .dog {
-      float: right;
-      background-color: coral;
-    }
+      /*All images will float to the left of the text inside their containers.
 
-    img {
-      float: left;
-    }
+      Text wraps around the image.
 
-    footer {
-      clear: both;
-      text-align: center;
-      background-color: blueviolet;
-    }
-  </style>
-</head>
+      So inside .cat, the cat image floats left, and the text flows to the right of it.
 
-<body>
-  <div class="cat">
-    <h2>CatCSS</h2>
+      Same for the dog image in .dog but to the right*/
+      .cat > img {
+        float: left;
+      }
+      .dog > img {
+        float: right;
+      }
 
-    <img src="cat.jpeg" alt="cat in a box" />
-    <p class="first-paragraph">Nap all day cat dog hate mouse eat string barf pillow no baths hate everything but kitty
-      poochy. Sleep on keyboard
-      toy
-      mouse squeak roll over. Mesmerizing birds. Poop on grasses licks paws destroy couch intently sniff hand. The dog
-      smells
-      bad gnaw the corn cob.</p>
-  </div>
+      footer {
+        clear: both; /*means the footer will not sit next to any floated elements (like .cat or .dog).*/
+        text-align: center;
+        background-color: blueviolet;
+      }
+    </style>
+  </head>
 
-  <div class="dog">
-    <h2>DogCSS</h2>
-    <img src="dog.jpeg" alt="dogs in a box" />
-    <p class="second-paragraph">Heckin good boys and girls long woofer big ol wow very biscit long woofer heck what a
-      nice
-      floof, long doggo noodle
-      horse vvv very taste wow. Very taste wow many pats aqua doggo he made many woofs pupperino, puggo doing me a
-      frighten.</p>
-  </div>
+  <body>
+    <div class="cat">
+      <h2>CatCSS</h2>
 
-  <footer>Copyright. This is the footer</footer>
-</body>
+      <img src="cat.jpeg" alt="cat in a box" />
+      <p class="first-paragraph">
+        Nap all day cat dog hate mouse eat string barf pillow no baths hate
+        everything but kitty poochy. Sleep on keyboard toy mouse squeak roll
+        over. Mesmerizing birds. Poop on grasses licks paws destroy couch
+        intently sniff hand. The dog smells bad gnaw the corn cob.
+      </p>
+    </div>
 
+    <div class="dog">
+      <h2>DogCSS</h2>
+      <img src="dog.jpeg" alt="dogs in a box" />
+      <p class="second-paragraph">
+        Heckin good boys and girls long woofer big ol wow very biscit long
+        woofer heck what a nice floof, long doggo noodle horse vvv very taste
+        wow. Very taste wow many pats aqua doggo he made many woofs pupperino,
+        puggo doing me a frighten.
+      </p>
+    </div>
+
+    <footer>Copyright. This is the footer</footer>
+  </body>
 </html>

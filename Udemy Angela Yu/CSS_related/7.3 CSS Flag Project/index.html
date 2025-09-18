@@ -4,64 +4,78 @@
     <meta charset="UTF-8" />
     <title>CSS Flag Project</title>
     <style>
-      /* Write your CSS Code here */
-      /* red rectangle */
+      /* ====== RED BACKGROUND (THE FLAG CANVAS) ======
+         - A 600×400 red rectangle.
+         - `position: absolute` positions it relative to the page (viewport).
+         - `text-align: center` centers inline text inside it ("The Flag"). */
       .flag {
-        background-color: rgb(206, 17, 38);
-        position: absolute;
+        background-color: rgb(206, 17, 38); /* Laos red */
+        position: absolute; /* taken out of normal flow; placed on the page */
         width: 600px;
         height: 400px;
-        text-align: center;
-        color: white;
-        font-size: xx-large;
-        
+        text-align: center; /* center the top text line */
+        color: white; /* top text color */
+        font-size: xx-large; /* top text size */
       }
-      /* we give height, width, & background values in order to see the div box */
-      /* blue rectangle */
-      /* we position blue rectangle w.r.t red rectangle */
-      .flag div {
-        position: absolute;
-        background-color: rgb(0, 40, 104);
-        width: 100%;
-        height: 50%;
-        top: 100px;
+      /* kill the paragraph's default margin */
+      .flag > p {
+        margin: 0;
       }
-      /* border-radius is to convert square to a circle with 50% */
-      .flag div div{
+
+      /* ====== BLUE MIDDLE BAND ======
+         Selector: `.flag div`
+         - Targets ANY <div> inside .flag.
+         - In this markup, the first child <div> is the blue band.
+         - `position: absolute` makes its offsets relative to `.flag`
+           (the nearest positioned ancestor—.flag is positioned).
+         - 100% width of .flag and 50% height (200px → centered by top:100px). */
+      .flag > div {
+        position: absolute; /* positioned inside .flag */
+        background-color: rgb(0, 40, 104); /* Laos blue */
+        width: 100%; /* same width as the red flag */
+        height: 50%; /* half of the flag's height */
+        top: 100px; /* 100px from top → leaves 100px red above & below */
+      }
+
+      /* ====== WHITE CIRCLE ======
+         Selector: `.flag div div`
+         - Targets the <div> inside the blue band.
+         - More specific than `.flag div`, so it overrides its background.
+         - 150×150 with 50% radius → perfect circle.
+         - Absolutely positioned INSIDE the blue band
+           (its positioned ancestor is the blue band div). */
+      .flag > div > div {
         position: absolute;
-        background-color: white;
-        border-radius: 50%;
+        background-color: white; /* overrides blue from `.flag div` */
+        border-radius: 50%; /* makes it a circle */
         height: 150px;
         width: 150px;
-        left:225px;
-        top: 12%;
+        left: 225px; /* 600px width → (600-150)/2 = 225px → horizontally centered */
+        top: 12%; /* 12% of blue band height (200px) ≈ 24px from the top */
       }
-      /* Child relationship between .flag > div > div > p */
-      /* body > div > div > div  */
-      /* We can use inspector to copy the selector directly */
-      .flag > div > div > p{
-        color: black;
-        font-size: 59px;
-        position: relative;
-        bottom: 57px
+
+      /* ====== "of Laos" TEXT INSIDE THE CIRCLE ======
+         Selector: `.flag > div > div > p`
+         - Direct-child chain to be precise about the target paragraph.
+         - `position: relative` lets us nudge it without removing from flow.
+         - `bottom: 57px` moves it UP to visually center within the circle. */
+      .flag > div > div > p {
+        color: black; /* Laos emblem text color */
+        font-size: 59px; /* big enough to fill the circle */
+        position: relative; /* enable offset without changing containing block */
+        bottom: 57px; /* pull text upward to center it in the circle */
       }
     </style>
   </head>
 
-  <!-- 
-  IMPORTANT! Do not change any HTML
-Don't add any classes/ids/elements 
-Use what you know about combining selectors 
-and CSS specificity instead.
-Hint 1: The flag is 900px by 600px and the circle is 200px by 200px.
-Hint 2: You can use CSS inspection to get the colors from
-https://appbrewery.github.io/flag-of-laos/
--->
-
   <body>
+    <!-- The red flag canvas -->
     <div class="flag">
       <p>The Flag</p>
+
+      <!-- Blue middle band (absolutely positioned inside .flag) -->
       <div>
+        <!-- White circle (absolutely positioned inside the blue band) -->
         <div>
           <p>of Laos</p>
         </div>
